@@ -35,3 +35,16 @@ while low <= high:
 
     num_smaller = get_num_smaller(mid)
     num_bigger = get_num_bigger(mid)
+
+    if num_smaller > k - 1:
+        # mid 보다 작은 수가 너무 많으면 답은 low ~ mid-1 사이에 존재한다.
+        high = mid - 1
+    elif num_bigger > n * n - k:
+        # mid 보다 큰 수가 너무 많으면 답은 mid+1 ~ high 사이에 존재한다.
+        low = mid + 1
+    else:
+        # mid 보다 작은 수가 k-1개 이하이고 큰 수가 n-k개 이하이면 mid는 k번째 수이다.
+        answer = mid
+        break
+
+print(answer)
