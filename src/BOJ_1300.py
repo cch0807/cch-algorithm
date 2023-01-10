@@ -24,6 +24,8 @@ def get_num_bigger(x: int) -> int:
         # i 번째 행에서 x보다 큰 수의 개수는 n - min(n, x // i) 개
         num_bigger += n - min(n, x // i)
 
+    return num_bigger
+
 
 # 이분 탐색을 수행하는 메인 로직
 low = 1
