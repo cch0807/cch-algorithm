@@ -20,4 +20,5 @@ def bfs(root):
         
     return visited
 
-bfs(root)
+
+print(bfs(['A','B','C']))
