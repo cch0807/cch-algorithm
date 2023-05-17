@@ -6,11 +6,13 @@
 # 구현할 브라우저는 homepage에서 시작하고, 이후에는 다른 url에 방문할 수 있다.
 # 또, "뒤로가기"와 "앞으로 가기"가 작동하도록 구현.
 
+
 class ListNode(object):
     def __init__(self, val=0, next=None, prev=None):
         self.val = val
         self.next = next
         self.prev = prev
+
 
 class BrowserHistory(object):
     def __init__(self, homepage: str):
@@ -31,7 +33,7 @@ class BrowserHistory(object):
             steps -= 1
             self.current = self.current.next
         return self.currnet.val
-    
+
 
 browserHistory = BrowserHistory("leetcode.com")
 browserHistory.visit("google.com")
