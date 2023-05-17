@@ -4,6 +4,7 @@
 # 만약 더 따듯해지는 날이 없다면 answer[i] == 0이다.
 # answer 배열을 반환하는 함수를 구현하시오.
 
+
 def dailyTemperatures(temperatures):
     ans = [0] * len(temperatures)
     stack = []
@@ -15,4 +16,5 @@ def dailyTemperatures(temperatures):
     print(ans)
     return ans
 
-dailyTemperatures([73,74,75,71,69,72,76,73])
+
+dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])
