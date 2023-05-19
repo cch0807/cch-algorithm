@@ -55,3 +55,41 @@ def numIslands(grid: list) -> int:
 
 
 print(numIslands(grid))
+
+
+class BreadthFirstSearch:
+    def __init__(self, grid: list[list[str]]):
+        self.grid = grid
+        self.row_len: int = len(grid)
+        self.col_len: int = len(grid[0])
+        self.dx: list[int] = [-1, 1, 0, 0]
+        self.dy: list[int] = [0, 0, -1, 1]
+        self.queue: deque = deque()
+        self.visited: list[list[bool]] = [[False] * self.col_len for _ in range(self.row_len)]
+        self.number_of_island = 0
+
+    def bfs(self, r, c) -> None:
+        self.visited[r][c] = True
+        self.queue.append((r, c))
+        while self.queue:
+            cur_x, cur_y = self.queue.pop()
+            for i in range(4):
+                next_x = cur_x + self.dx[i]
+                next_y = cur_y + self.dy[i]
+                if next_x >= 0 and next_x < self.col_len and next_y >= 0 and next_y < self.row_len:
+                    if self.grid[next_x][next_y] == "1" and not self.visited[next_x][next_y]:
+                        self.visited[next_x][next_y] = True
+                        self.queue.append((next_x, next_y))
+
+    def main(self) -> int:
+        for r, row in enumerate(grid):
+            for c, letter in enumerate(row):
+                if self.grid[r][c] == "1" and not self.visited[r][c]:
+                    self.bfs(r, c)
+                    self.number_of_island += 1
+
+        return self.number_of_island
+
+
+bfs = BreadthFirstSearch(grid)
+print(bfs.main())
