@@ -16,3 +16,46 @@ n == grid[i].length
 1 <- n <= 100
 grid[i][j] is 0 or 1
 """
+
+from collections import deque
+from pprint import pprint
+
+grid = [
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 1, 1, 1, 0, 1, 0],
+    [0, 1, 0, 0, 0, 1, 0],
+    [0, 0, 0, 1, 1, 1, 0],
+    [0, 1, 0, 0, 0, 0, 0],
+]
+
+
+def shortestPathBinaryMatrix(grid):
+    shortest_path_len = -1
+    row = len(grid)
+    col = len(grid[0])
+    visited = [[False] * col for _ in range(row)]
+    delta = [
+        (1, 0),
+        (-1, 0),
+        (0, 1),
+        (0, -1),
+        (1, 1),
+        (-1, 1),
+        (1, -1),
+        (-1, -1),
+    ]
+
+    visited[0][0] = True
+    queue = deque()
+    queue.append((0, 0))
+
+    while queue:
+        cur_r, cur_c = queue.pop()
+        for dr, dc in delta:
+            next_r = cur_r + dr
+            next_c = cur_c + dc
+
+    return shortest_path_len
+
+
+print(shortestPathBinaryMatrix(grid))
