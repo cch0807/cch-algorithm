@@ -47,13 +47,18 @@ def shortestPathBinaryMatrix(grid):
 
     visited[0][0] = True
     queue = deque()
-    queue.append((0, 0))
+    queue.append((0, 0, 1))
 
     while queue:
-        cur_r, cur_c = queue.pop()
+        cur_r, cur_c, cur_len = queue.popleft()
+        # 연결되어있는 vertex 확인하기
         for dr, dc in delta:
             next_r = cur_r + dr
             next_c = cur_c + dc
+            if next_r >= 0 and next_r < row and next_c >= 0 and next_c < col:
+                if grid[next_r][next_c] == 0 and not visited[next_r][next_c]:
+                    queue.append((next_r, next_c, cur_len + 1))
+                    visited[next_r][next_c] = True
 
     return shortest_path_len
 
