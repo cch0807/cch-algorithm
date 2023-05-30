@@ -51,6 +51,9 @@ def shortestPathBinaryMatrix(grid):
 
     while queue:
         cur_r, cur_c, cur_len = queue.popleft()
+        # 목적지에 도착했을 때의 cur_len를 shortest_path_len에 저장하면 된다.
+        if cur_r == row - 1 and cur_c == col - 1:
+            shortest_path_len = cur_len
         # 연결되어있는 vertex 확인하기
         for dr, dc in delta:
             next_r = cur_r + dr
