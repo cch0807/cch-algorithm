@@ -3,6 +3,6 @@
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "100"],
+  "python.formatting.blackArgs": ["--line-length", "80"],
   "editor.formatOnSave": true
 }
