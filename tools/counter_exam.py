@@ -33,3 +33,7 @@ print(sc.total())
 
 sc.subtract("hello")
 print(sc)
+
+d = {"one": 100, "two": 200, "three": 300}
+s = Counter(d)
+print(s)
