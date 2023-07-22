@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+def sugar_delivery(weight):
+    for bag5 in range(weight // 5, -1, -1):
+        remainder = weight - bag5 * 5
+        if remainder % 3 == 0:
+            bag3 = remainder // 3
+            return bag5 + bag3
+
+    return -1
+
+
+if __name__ == "__main__":
+    weight = int(input())
+    result = sugar_delivery(weight)
+    print(result)
+=======
 def solution(n):
     if n == 0:  # n이 0인 경우, 드래곤과 알이 없으므로 0을 반환
         return 1
@@ -22,3 +38,4 @@ def solution(n):
 
 
 print(solution(4))
+>>>>>>> 41c429841c3bb8d7bfc62b31dbc6ad142b268137
