@@ -1,10 +1,10 @@
 # Dynamic Array (list)
 
-a = [1, 2, 3] # 선언 및 초기화: O(n)
+a = [1, 2, 3]  # 선언 및 초기화: O(n)
 
 # 접근 및 수정 : O(1)
-a = [0] # random access -> O(1)
-a[1] = 9 # random access -> O(1)
+a = [0]  # random access -> O(1)
+a[1] = 9  # random access -> O(1)
 
 # 데이터 추가 : O(1)
 a.append(4)

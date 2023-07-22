@@ -5,7 +5,7 @@ def bfs(root):
     visited = []
     if root is None:
         return []
-    
+
     q = deque()
     q.append(root)
     while q:
@@ -14,10 +14,11 @@ def bfs(root):
 
         if cur_node.left:
             q.append(cur_node.left)
-        
+
         if cur_node.right:
             q.append(cur_node.right)
-        
+
     return visited
 
-bfs(root)
+
+print(bfs(["A", "B", "C"]))

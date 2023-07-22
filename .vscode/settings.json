@@ -1,6 +1,16 @@
 {
+<<<<<<< HEAD
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "none"
 }
+=======
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "80"],
+  "editor.formatOnSave": true
+}
+>>>>>>> 41c429841c3bb8d7bfc62b31dbc6ad142b268137
